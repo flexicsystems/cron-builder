@@ -14,6 +14,12 @@ namespace Flexic\CronBuilder;
 
 final class ExpressionBuilder
 {
+    use Traits\MinuteTrait;
+    use Traits\HourTrait;
+    use Traits\DayTrait;
+    use Traits\MonthTrait;
+    use Traits\DayOfWeekTrait;
+
     private Field $minute;
 
     private Field $hour;
@@ -22,7 +28,7 @@ final class ExpressionBuilder
 
     private Field $month;
 
-    private Field $weekday;
+    private Field $dayOfWeek;
 
     public function __construct()
     {
@@ -30,7 +36,7 @@ final class ExpressionBuilder
         $this->hour = new Field();
         $this->day = new Field();
         $this->month = new Field();
-        $this->weekday = new Field();
+        $this->dayOfWeek = new Field();
     }
 
     public function build(): string
@@ -41,7 +47,7 @@ final class ExpressionBuilder
             (string) $this->hour,
             (string) $this->day,
             (string) $this->month,
-            (string) $this->weekday,
+            (string) $this->dayOfWeek,
         );
     }
 }
