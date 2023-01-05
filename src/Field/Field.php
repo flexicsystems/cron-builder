@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @version 2.0.0
  */
 
-namespace Flexic\CronExpressionBuilder\Field;
+namespace Flexic\CronBuilder\Field;
 
 use Cron\CronExpression;
 
