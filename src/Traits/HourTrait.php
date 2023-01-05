@@ -49,6 +49,19 @@ trait HourTrait
         return $this;
     }
 
+    public function notAtHours(int ...$hours): self
+    {
+        $this->hour->setExpression(new Expression\ListExpression(\array_filter(\array_map(static function (int $hour) use ($hours): ?Expression\ValueExpression {
+            if (\in_array($hour, $hours, true)) {
+                return null;
+            }
+
+            return new Expression\ValueExpression($hour);
+        }, \range(0, 59)))));
+
+        return $this;
+    }
+
     public function betweenHours(int $from, int $to): self
     {
         $this->hour->setExpression(new Expression\RangeExpression(
