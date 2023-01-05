@@ -12,8 +12,8 @@ declare(strict_types=1);
 
 namespace Flexic\CronBuilder\Traits;
 
-use Flexic\CronBuilder\Expression;
 use Flexic\CronBuilder\Enums\DayOfWeek;
+use Flexic\CronBuilder\Expression;
 
 trait DayOfWeekTrait
 {
@@ -69,7 +69,7 @@ trait DayOfWeekTrait
     public function onDayOfWeek(int|DayOfWeek $weekday): self
     {
         $this->dayOfWeek->setExpression(new Expression\ValueExpression(
-            $weekday instanceof DayOfWeek ? $weekday->value : $weekday
+            $weekday instanceof DayOfWeek ? $weekday->value : $weekday,
         ));
 
         return $this;
@@ -77,7 +77,7 @@ trait DayOfWeekTrait
 
     public function onDaysOfWeek(int|DayOfWeek ...$weekdays): self
     {
-        $this->dayOfWeek->setExpression(new Expression\ListExpression(\array_map(function ($weekday) {
+        $this->dayOfWeek->setExpression(new Expression\ListExpression(\array_map(static function ($weekday) {
             return $weekday instanceof DayOfWeek ? $weekday->value : $weekday;
         }, $weekdays)));
 
@@ -86,9 +86,11 @@ trait DayOfWeekTrait
 
     public function betweenDaysOfWeek(int|DayOfWeek $from, int|DayOfWeek $to): self
     {
-        $this->dayOfWeek->setExpression(new Expression\RangeExpression(
-            new Expression\ValueExpression($from instanceof DayOfWeek ? $from->value : $from),
-            new Expression\ValueExpression($to instanceof DayOfWeek ? $to->value : $to)),
+        $this->dayOfWeek->setExpression(
+            new Expression\RangeExpression(
+                new Expression\ValueExpression($from instanceof DayOfWeek ? $from->value : $from),
+                new Expression\ValueExpression($to instanceof DayOfWeek ? $to->value : $to),
+            ),
         );
 
         return $this;
