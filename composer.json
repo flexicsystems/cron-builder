@@ -1,0 +1,40 @@
+{
+  "name": "flexic/cron-expression-builder",
+  "type": "library",
+  "description": " Builder for cron expressions.",
+  "keywords": [
+    "cron",
+    "expression",
+    "builder"
+  ],
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Hendrik Legge",
+      "email": "info@themepoint.de",
+      "homepage": "https://themepoint.de"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "dragonmantank/cron-expression": "^3.3.2"
+  },
+  "config": {
+    "platform": {
+      "php": "8.1"
+    },
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Flexic\\CronExpressionBuilder\\": "src/"
+    }
+  },
+  "require-dev": {
+    "ergebnis/php-cs-fixer-config": "^4.9.0",
+    "phpstan/phpstan": "^1.8.8",
+    "phpstan/phpstan-deprecation-rules": "^1.0.0",
+    "phpstan/phpstan-strict-rules": "^1.4.4"
+  }
+}
