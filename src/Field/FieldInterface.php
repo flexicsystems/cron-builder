@@ -12,15 +12,12 @@ declare(strict_types=1);
 
 namespace Flexic\CronBuilder\Field;
 
-enum Field: int
+use Flexic\CronBuilder\ExpressionBuilder;
+
+interface FieldInterface
 {
-    case MINUTE = 0;
-
-    case HOUR = 1;
-
-    case DAY = 2;
-
-    case MONTH = 3;
-
-    case WEEKDAY = 4;
+    /**
+     * Converts the field to a string expression.
+     */
+    public function __toString(): string;
 }

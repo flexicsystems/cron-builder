@@ -12,6 +12,19 @@ declare(strict_types=1);
 
 namespace Flexic\CronBuilder;
 
+use Flexic\CronBuilder\Field\Minute;
+
 final class ExpressionBuilder
 {
+    private Minute $minute;
+
+    public function __construct()
+    {
+        $this->minute = new Minute($this);
+    }
+
+    public function minute(): Minute
+    {
+        return $this->minute;
+    }
 }

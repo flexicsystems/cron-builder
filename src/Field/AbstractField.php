@@ -12,15 +12,8 @@ declare(strict_types=1);
 
 namespace Flexic\CronBuilder\Field;
 
-enum Field: int
+use Flexic\CronBuilder\ExpressionBuilder;
+
+abstract class AbstractField implements FieldInterface
 {
-    case MINUTE = 0;
-
-    case HOUR = 1;
-
-    case DAY = 2;
-
-    case MONTH = 3;
-
-    case WEEKDAY = 4;
 }
