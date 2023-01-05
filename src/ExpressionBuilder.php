@@ -12,8 +12,6 @@ declare(strict_types=1);
 
 namespace Flexic\CronExpressionBuilder;
 
-
 final class ExpressionBuilder
 {
-
 }
