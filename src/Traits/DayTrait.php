@@ -42,7 +42,9 @@ trait DayTrait
 
     public function onDays(int ...$days): self
     {
-        $this->day->setExpression(new Expression\ListExpression(...$days));
+        $this->day->setExpression(new Expression\ListExpression(\array_map(static function (int $day) {
+            return new Expression\ValueExpression($day);
+        }, $days)));
 
         return $this;
     }

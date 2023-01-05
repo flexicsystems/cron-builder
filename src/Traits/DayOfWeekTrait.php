@@ -78,7 +78,7 @@ trait DayOfWeekTrait
     public function onDaysOfWeek(int|DayOfWeek ...$weekdays): self
     {
         $this->dayOfWeek->setExpression(new Expression\ListExpression(\array_map(static function ($weekday) {
-            return $weekday instanceof DayOfWeek ? $weekday->value : $weekday;
+            return new Expression\ValueExpression($weekday instanceof DayOfWeek ? $weekday->value : $weekday);
         }, $weekdays)));
 
         return $this;

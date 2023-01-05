@@ -42,7 +42,9 @@ trait HourTrait
 
     public function atHours(int ...$hours): self
     {
-        $this->hour->setExpression(new Expression\ListExpression(...$hours));
+        $this->hour->setExpression(new Expression\ListExpression(\array_map(static function (int $hour) {
+            return new Expression\ValueExpression($hour);
+        }, $hours)));
 
         return $this;
     }

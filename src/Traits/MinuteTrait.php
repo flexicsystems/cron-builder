@@ -42,7 +42,9 @@ trait MinuteTrait
 
     public function atMinutes(int ...$minutes): self
     {
-        $this->minute->setExpression(new Expression\ListExpression(...$minutes));
+        $this->minute->setExpression(new Expression\ListExpression(\array_map(static function (int $minute) {
+            return new Expression\ValueExpression($minute);
+        }, $minutes)));
 
         return $this;
     }
