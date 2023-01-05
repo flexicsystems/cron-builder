@@ -14,7 +14,7 @@ namespace Flexic\CronBuilder\Field;
 
 use Flexic\CronBuilder\Expression;
 
-final class Minute
+final class Weekday
 {
     private Expression\ExpressionInterface $expression;
 
