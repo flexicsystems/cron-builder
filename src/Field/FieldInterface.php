@@ -12,8 +12,6 @@ declare(strict_types=1);
 
 namespace Flexic\CronBuilder\Field;
 
-use Flexic\CronBuilder\ExpressionBuilder;
-
 interface FieldInterface
 {
     /**

@@ -25,7 +25,7 @@ final class RangeExpression implements ExpressionInterface
         return \sprintf(
             '%s-%s',
             (string) $this->from,
-            (string) $this->to
+            (string) $this->to,
         );
     }
 }

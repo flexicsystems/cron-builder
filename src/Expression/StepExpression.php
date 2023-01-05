@@ -25,7 +25,7 @@ final class StepExpression implements ExpressionInterface
         return \sprintf(
             '%s/%s',
             (string) $this->expression,
-            (string) $this->step
+            (string) $this->step,
         );
     }
 }
