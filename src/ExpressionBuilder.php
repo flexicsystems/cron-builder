@@ -19,6 +19,7 @@ final class ExpressionBuilder
     use Traits\DayTrait;
     use Traits\MonthTrait;
     use Traits\DayOfWeekTrait;
+    use Traits\GeneralTrait;
 
     private Field $minute;
 
