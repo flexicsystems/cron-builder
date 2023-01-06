@@ -18,7 +18,7 @@ final class Field
 {
     private ExpressionInterface $expression;
 
-    public function __construct(ExpressionInterface $expression = null)
+    public function __construct(?ExpressionInterface $expression = null)
     {
         $this->expression = $expression ?? new Expression\AnyExpression();
     }

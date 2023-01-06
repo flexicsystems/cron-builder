@@ -33,7 +33,7 @@ final class CronBuilder
 
     public function __construct(Cron|string|null $cron = null)
     {
-        if (!($cron instanceof Cron)) {
+        if (!$cron instanceof Cron) {
             $cron = Lexer::fromString($cron ?? '* * * * *');
         }
 
