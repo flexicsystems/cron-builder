@@ -18,9 +18,9 @@ final class Field
 {
     private ExpressionInterface $expression;
 
-    public function __construct()
+    public function __construct(ExpressionInterface $expression = null)
     {
-        $this->expression = new Expression\AnyExpression();
+        $this->expression = $expression ?? new Expression\AnyExpression();
     }
 
     public function __toString(): string
