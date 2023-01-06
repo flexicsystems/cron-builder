@@ -27,11 +27,11 @@ final class Lexer
         }
 
         return new Cron(
-            new Expression\ValueExpression($matches[2]),
-            new Expression\ValueExpression($matches[3]),
-            new Expression\ValueExpression($matches[4]),
-            new Expression\ValueExpression($matches[5]),
-            new Expression\ValueExpression($matches[6]),
+            new Expression\Expression($matches[2]),
+            new Expression\Expression($matches[3]),
+            new Expression\Expression($matches[4]),
+            new Expression\Expression($matches[5]),
+            new Expression\Expression($matches[6]),
         );
     }
 }
