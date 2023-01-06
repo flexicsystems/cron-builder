@@ -31,10 +31,16 @@
       "Flexic\\CronBuilder\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Flexic\\CronBuilder\\Test\\": "test/"
+    }
+  },
   "require-dev": {
     "ergebnis/php-cs-fixer-config": "^4.9.0",
     "phpstan/phpstan": "^1.8.8",
     "phpstan/phpstan-deprecation-rules": "^1.0.0",
-    "phpstan/phpstan-strict-rules": "^1.4.4"
+    "phpstan/phpstan-strict-rules": "^1.4.4",
+    "phpunit/phpunit": "^9.5.26"
   }
 }

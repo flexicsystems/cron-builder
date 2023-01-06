@@ -8,6 +8,16 @@ static-code-analysis: vendor ## Runs a static code analysis with phpstan/phpstan
 	mkdir -p .build/phpstan
 	vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=-1
 
+.PHONY: test
+test: composer.json composer.lock
+	vendor/bin/phpunit --configuration=phpunit.xml
+
+.PHONY: code-coverage
+code-coverage: composer.json composer.lock
+	vendor/bin/phpunit --configuration=phpunit.xml --coverage-html .build
+	open .build/index.html -a "google chrome"
+
+
 # ------------------------------------------------------------------------------
 .PHONY: help
 help: ## Displays this list of targets with descriptions

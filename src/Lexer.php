@@ -22,7 +22,7 @@ final class Lexer
             $matches,
         );
 
-        if (!\is_array($matches) || \count($matches) !== 6) {
+        if (!\is_array($matches) || \count($matches) !== 7) {
             throw new \InvalidArgumentException('Invalid cron expression');
         }
 
