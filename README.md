@@ -25,11 +25,6 @@ $cron = CronBuilder::create()
 // */5 * * * *
 
 $cron = CronBuilder::create()
-    ->atMinute(5)
-    ->build();
-    
-    
-$cron = CronBuilder::create()
     ->notOnDaysOfWeek(3, 4)
     ->build();
 // * * * * 1,2,5,6,0
@@ -55,3 +50,11 @@ TBD
 | getMonthExpression()      | Returns the month expression         | Expression Object |
 | getDayOfWeekExpression()  | Returns the day of week expression   | Expression Object |
 | __toString()              | Returns the complete cron expression | string            |
+
+#### Lexer
+
+Lexer is used to parse the cron expression into tokens.
+
+| Method       | Description                            | Return Format |
+|--------------|----------------------------------------|---------------|
+| fromString() | Parses the cron expression into tokens | Cron Object   |
