@@ -27,6 +27,17 @@ trait GeneralTrait
         return $this;
     }
 
+    public function hourlyAt(int $minute): self
+    {
+        $this->minute->setExpression(new Expression\ValueExpression($minute));
+        $this->hour->setExpression(new Expression\AnyExpression());
+        $this->day->setExpression(new Expression\AnyExpression());
+        $this->month->setExpression(new Expression\AnyExpression());
+        $this->dayOfWeek->setExpression(new Expression\AnyExpression());
+
+        return $this;
+    }
+
     public function daily(): self
     {
         $this->minute->setExpression(new Expression\ValueExpression(0));
