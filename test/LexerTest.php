@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * Copyright (c) 2022-2023 Flexic-Systems
+ *
+ * @author Hendrik Legge <hendrik.legge@themepoint.de>
+ *
+ * @version 2.0.0
+ */
+
 namespace Flexic\CronBuilder\Test;
 
 /**
@@ -7,9 +17,11 @@ namespace Flexic\CronBuilder\Test;
  *
  * @covers \Flexic\CronBuilder\Lexer
  */
-class LexerTest extends AbstractTestCase
+final class LexerTest extends AbstractTestCase
 {
-    /** @dataProvider cronProvider */
+    /**
+     * @dataProvider cronProvider
+     */
     public function testFromString(string $cron, string $minute, string $hour, string $day, string $month, string $dayOfWeek): void
     {
         $cronExpression = \Flexic\CronBuilder\Lexer::fromString($cron);
@@ -35,25 +47,24 @@ class LexerTest extends AbstractTestCase
         ];
 
         $modifier = [
-            'all' => function () {
+            'all' => static function () {
                 return '*';
             },
-            'range' => function (int $min, $list) {
+            'range' => static function (int $min, $list) {
                 return $min . '-' . \random_int($min, $min + 10);
             },
-            'step' => function (int $min) {
+            'step' => static function (int $min) {
                 return $min . '/' . \random_int(1, 10);
             },
-            'list' => function (int $min) {
+            'list' => static function (int $min) {
                 return $min . ',' . \random_int($min, $min + 10);
             },
-            'list-multiple' => function (int $min) {
+            'list-multiple' => static function (int $min) {
                 return $min . ',' . \random_int($min, $min + 10) . ',' . \random_int($min, $min + 10);
             },
         ];
 
-        return \array_map(function (int $iteration) use ($elements, $modifier): array {
-
+        return \array_map(static function (int $iteration) use ($elements, $modifier): array {
             $tokens = [
                 'minute' => [(string) \array_rand($elements['minute'], 1), $elements['minute']],
                 'hour' => [(string) \array_rand($elements['hour'], 1), $elements['hour']],
@@ -74,6 +85,6 @@ class LexerTest extends AbstractTestCase
                 $tokens['month'][0],
                 $tokens['dayOfWeek'][0],
             ];
-        }, range(0, 100));
+        }, \range(0, 100));
     }
 }
