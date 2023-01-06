@@ -37,7 +37,63 @@ It can also be converted to a string.
 
 #### Builder
 
-TBD
+| Method                        | Description                                                      |
+|-------------------------------|------------------------------------------------------------------|
+| create()                      | Creates a new instance of the builder. (Method is static called) |
+| build()                       | Builds the cron expression.                                      |
+| everyMinute()                 |                                                                  |
+| atMinuteInterval($interval)   |                                                                  |
+| atMinute($minute)             |                                                                  |
+| atMinutes($minutes)           |                                                                  |
+| betweenMinutes($from, $to)    |                                                                  |
+| everyHour()                   |                                                                  |
+| atHourInterval($interval)     |                                                                  |
+| atHour($hour)                 |                                                                  |
+| atHours($hours)               |                                                                  |
+| notAtHours($hours)            |                                                                  |
+| betweenHours($from, $to)      |                                                                  |
+| everyDay()                    |                                                                  |
+| onDayInterval($interval)      |                                                                  |
+| onDay($day)                   |                                                                  |
+| onDays($days)                 |                                                                  |
+| betweenDays($from, $to)       |                                                                  |
+| inJanuary()                   |                                                                  |
+| inFebruary()                  |                                                                  |
+| inMarch()                     |                                                                  |
+| inApril()                     |                                                                  |
+| inMay()                       |                                                                  |
+| inJune()                      |                                                                  |
+| inJuly()                      |                                                                  |
+| inAugust()                    |                                                                  |
+| inSeptember()                 |                                                                  |
+| inOctober()                   |                                                                  |
+| inNovember()                  |                                                                  |
+| inDecember()                  |                                                                  |
+| inMonth($month)               |                                                                  |
+| everyMonth()                  |                                                                  |
+| onMonthInterval($interval)    |                                                                  |
+| onSunday()                    |                                                                  |
+| onMonday()                    |                                                                  |
+| onTuesday()                   |                                                                  |
+| onWednesday()                 |                                                                  |
+| onThursday()                  |                                                                  |
+| onFriday()                    |                                                                  |
+| onSaturday()                  |                                                                  |
+| onDayOfWeek($weekday)         |                                                                  |
+| onDaysOfWeek($weekdays)       |                                                                  |
+| betweenDaysOfWeek($from, $to) |                                                                  |
+| notOnDaysOfWeek($weekdays)    |                                                                  |
+| onWeekend()                   |                                                                  |
+| onWeekdays()                  |                                                                  |
+| everyWeekday()                |                                                                  |
+| onWeekdayInterval($interval)  |                                                                  |
+| hourly()                      |                                                                  |
+| hourlyAt($minute)             |                                                                  |
+| daily()                       |                                                                  |
+| weekly()                      |                                                                  |
+| monthly()                     |                                                                  |
+| quarterly()                   |                                                                  |
+| yearly()                      |                                                                  |
 
 #### Cron
 
